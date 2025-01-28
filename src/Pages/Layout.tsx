@@ -11,6 +11,9 @@ function Layout() {
         <NavLink to="/useparam">UseParam</NavLink>
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/table">Table</NavLink>
+    
+
+
         {/* <NavLink to="/details">Details</NavLink> */}
 
 

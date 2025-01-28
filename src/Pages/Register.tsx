@@ -2,7 +2,6 @@
 
 // 4. Create example for how we can get information from current route [use useLocation()]
 
-
 import React from "react";
 import { Outlet, NavLink, useLocation } from "react-router-dom";
 
@@ -18,6 +17,7 @@ function Register() {
         </NavLink>
 
         <NavLink to="signin">Signin</NavLink>
+        
       </nav1>
       <Outlet />
     </div>
@@ -25,4 +25,3 @@ function Register() {
 }
 
 export default Register;
-
