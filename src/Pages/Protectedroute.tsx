@@ -1,20 +1,24 @@
-// import React from "react";
-// import { Navigate, Outlet } from "react-router-dom";
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
-// const ProtectedRoute = () => {
-//   const user = JSON.parse(localStorage.getItem("") || "{}");
+interface ProtectedRouteProps {
+  isAuthenticated: boolean;
+}
 
-//   if (!user || !user.role) {
-//     return <Navigate to="/login" />;
-//   }
+const Protectedroute: React <ProtectedRouteProps> = ({ isAuthenticated }) => {
+  // const user = JSON.parse(localStorage.getItem("user") || "{}");
 
-//   return user.role === "admin" ? (
-//     <Navigate to="/admin" />
-//   ) : user.role === "user" ? (
-//     <Navigate to="/user" />
-//   ) : (
-//     <Navigate to="/login" />
-//   );
-// };
+  // if (!isAuthenticated || !user.role) {
+  //   return <Navigate to="/register/login" />;
+  // }
 
-// export default ProtectedRoute;
+  // return user.role === "admin" ? (
+  //   <Navigate to="/admin" />
+  // ) : user.role === "user" ? (
+  //   <Navigate to="/user" />
+  // ) : (
+  //   <Navigate to="/register/login" />
+  // );
+};
+
+export default Protectedroute;

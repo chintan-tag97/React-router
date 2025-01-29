@@ -20,8 +20,7 @@ const Admin = () => {
   };
 
   const handleLogout = () => {
-    // const confirmNavigation = window.confirm("Are you sure want to Logout ?");
-    // if (confirmNavigation) {
+    localStorage.removeItem("user");
     navigate("/");
   };
   return (

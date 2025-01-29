@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const data = {
   "admin@gmail.com": { password: "12345678", role: "admin" },
@@ -23,14 +23,12 @@ function Login() {
   const handleLogin = () => {
     if (data[email] && data[email].password === password) {
       const userData = { email, role: data[email].role };
-      localStorage.setItem("user", JSON.stringify(userData));
-      localStorage.setItem("user", JSON.stringify({ userData })); 
       
-      localStorage.setItem("user", JSON.stringify({userData}));
-
       if (userData.role === "admin") {
+        localStorage.setItem("user", JSON.stringify({ role: "admin" })); 
         navigate("/admin");
       } else if (userData.role === "user") {
+        localStorage.setItem("user", JSON.stringify({ role: "user" }));
         navigate("/user");
       }
     } else {
@@ -43,6 +41,7 @@ function Login() {
   return (
     <div>
       <h2>Login</h2>
+      {/* <NavLink to="/admin">123</NavLink> */}
       {error && <p style={{ color: "red" }}>{error}</p>}
       <input
         type="email"

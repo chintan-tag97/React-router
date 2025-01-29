@@ -1,25 +1,24 @@
-// import React from 'react';
-// import { NavLink, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Navigate } from "react-router-dom";
 
-// const Dashboard = ({ logout }) => {
-//     const navigate = useNavigate();
+interface DashboardProps {
+  logout: () => void;
+}
 
-//     const handleLogout = () => {
-//         logout();
-//         navigate('/');
-//     };
+const Dashboard: React.FC<DashboardProps> = ({ logout }) => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
-//     return (
-//         <div>
-//              <nav>
-//         <NavLink to="/admin">Dashboard</NavLink>
-//         <NavLink to="/admin">Profile</NavLink>
-//         <NavLink to="/user">User</NavLink>
+  if (!user.role) {
+    return <Navigate to="/register/admin" />;
+  }
 
-//         <button onClick={handleLogout}>Logout</button>
-//       </nav>
-//         </div>
-//     );
-// };
+  return (
+    <div className="dashboard-container">
+      <h1>Welcome to the Dashboard</h1>
+      <h2>Role: {user.role}</h2>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
+};
 
-// export default Dashboard;
+export default Dashboard;

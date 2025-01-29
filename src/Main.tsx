@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout.tsx";
@@ -10,8 +11,8 @@ import Register from "./Pages/Register.tsx";
 import Login from "./Pages/Login.tsx";
 import Signin from "./Pages/Signin.tsx";
 import NoPage from "./Pages/NoPage.tsx";
-// import Protectedroute from "./Pages/Protectedroute.tsx";
-
+import Protectedroute from "./Pages/Protectedroute.tsx";
+import { AuthProvider } from "./Pages/Auth.tsx";
 import "./main.scss";
 import Table from "./Pages/Table.tsx";
 import Details from "./Pages/Details.tsx";
@@ -46,15 +47,13 @@ function Main() {
           <Route path="/details" element={<Details />} />
           <Route path="/table" element={<Table />}></Route>
         </Route>
-
+       
         {/* <Route element={<Protectedroute isAuthenticated={isAuthenticated} />}> */}
           <Route path="user" element={<User logout={logout} />}></Route>
           <Route path="admin" element={<Admin logout={logout}  />}></Route>
           {/* <Route path="dashboard" element={<Dashboard logout={logout} />}></Route></Route> */}
-        
- 
 
-       
+
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
+import { useAuth } from "./Auth.tsx";
 
 function Layout() {
+  const Auth = useAuth()
   return (
     <div>
       <nav>
@@ -11,7 +13,9 @@ function Layout() {
         <NavLink to="/useparam">UseParam</NavLink>
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/table">Table</NavLink>
-    
+        
+      
+
 
 
         {/* <NavLink to="/details">Details</NavLink> */}
